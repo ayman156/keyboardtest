@@ -1,8 +1,14 @@
 
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.sampro.customkeyboard">
-	<uses-permission android:name="android.permission.BIND_INPUT_METHOD" />
+	package="ayman.djangogenerator">
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.BIND_EXTERNAL_STORAGE_SERVICE" />
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
 	<application
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
@@ -16,7 +22,58 @@
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
 			android:hardwareAccelerated="true"
 			android:supportsPictureInPicture="true"
-			android:screenOrientation="portrait"
+			android:theme="@style/AppTheme.FullScreen"
+			android:screenOrientation="portrait" />
+		<activity
+			android:name=".MiuActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".GenerateActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".AddfieldActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".ConmodelActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".MyrepActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".ToturActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".AddModelsActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".FromsetActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".MysqlActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".MainnActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -24,12 +81,28 @@
 			</intent-filter>
 		</activity>
 		<activity
+			android:name=".WebviewActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true"
+			android:windowSoftInputMode="stateHidden" />
+		<activity
+			android:name=".TestuiActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
+			android:name=".CodeActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true" />
+		<activity
 			android:name=".DebugActivity"
 			android:screenOrientation="portrait"
 			android:theme="@style/AppTheme.DebugActivity" />
 		<provider
 			android:name="androidx.startup.InitializationProvider"
-			android:authorities="com.sampro.customkeyboard.androidx-startup"
+			android:authorities="ayman.djangogenerator.androidx-startup"
 			android:exported="false">
 			<meta-data
 				android:name="androidx.lifecycle.ProcessLifecycleInitializer"
@@ -38,25 +111,104 @@
 				android:name="androidx.emoji2.text.EmojiCompatInitializer"
 				android:value="androidx.startup" />
 		</provider>
+		<activity
+			android:name="com.example.djangobuilder.ModelDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.ProjectDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.JSONPreviewActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.AppDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.AddModelActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.AddAppActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangobuilder.AddFieldActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.AddProjectActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.AddModelActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.AddFieldActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.AddAppActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.AppDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.DebugActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.JSONPreviewActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.ModelDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.ProjectDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.ReportDesignerrActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.ReportDesignerActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.CreateFormsetActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.example.djangogenerator.FormsetsListActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.AddProjectActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.AddModelActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.AddFieldActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.AddAppActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.AppDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.CreateFormsetActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.FormsetsListActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.JSONPreviewActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.ModelDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.ProjectDetailActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.ReportDesignerActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="ayman.djangogenerator.ReportDesignerrActivity"
+			android:configChanges="orientation|screenSize" />
 		<uses-library
 			android:name="org.apache.http.legacy"
 			android:required="false" />
-
-
-        <!-- تعريف خدمة لوحة المفاتيح -->
-        <service
-            android:name=".CustomKeyboardService"
-            android:label="لوحة مفاتيح سام برو"
-            android:permission="android.permission.BIND_INPUT_METHOD"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.view.InputMethod" />
-            </intent-filter>
-            <meta-data
-                android:name="android.view.im"
-                android:resource="@xml/method" />
-        </service>
-
-    
 	</application>
 </manifest>
