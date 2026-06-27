@@ -1,7 +1,27 @@
 <resources>
-	<color name="colorPrimary">#5A76AA</color>
-	<color name="colorPrimaryDark">#5A76AA</color>
-	<color name="colorAccent">#5A76AA</color>
-	<color name="colorControlHighlight">#D7E3FF</color>
-	<color name="colorControlNormal">#5A76AA</color>
+    <color name="colorPrimary">#5A76AA</color>
+    <color name="colorPrimaryDark">#5A76AA</color>
+    <color name="colorAccent">#5A76AA</color>
+    <color name="colorControlHighlight">#D7E3FF</color>
+    <color name="colorControlNormal">#5A76AA</color>
+    <color name="background">#f5f5f5</color>
+    <color name="textColor">#212121</color>
+    <color name="success">#4CAF50</color>
+    <color name="danger">#F44336</color>
+    <color name="warning">#FFC107</color>
+    <color name="info">#2196F3</color>
+    <color name="primary">#1F4E99</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--ألوان مخصصة-->
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="blue">#2196F3</color>
+    <color name="purple">#9C27B0</color>
+    <color name="orange">#FF9800</color>
 </resources>
