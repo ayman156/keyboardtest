@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Inline Formset"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Parent Model -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parent Model:"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/parent_model_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Child Model -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Child Model:"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/child_model_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Relationship Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relationship Name:"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/relationship_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g., subjects_set"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Extra Fields -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extra Empty Forms:"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/extra_fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="1"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Prefix -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Form Prefix:"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/prefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g., formset"
+        android:text="formset"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Can Delete -->
+    <CheckBox
+        android:id="@+id/can_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Allow deleting related items"
+        android:checked="true"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Formset"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
