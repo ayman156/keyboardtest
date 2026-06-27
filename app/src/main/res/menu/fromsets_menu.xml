@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/create_formset"
+        android:title="Create Inline Formset"
+        android:icon="@android:drawable/ic_menu_add"/>
+    
+    <item
+        android:id="@+id/view_formsets"
+        android:title="View Existing Formsets"
+        android:icon="@android:drawable/ic_menu_sort_by_size"/>
+    
+    <item
+        android:id="@+id/generate_formsets"
+        android:title="Generate Formsets Code"
+        android:icon="@android:drawable/ic_menu_edit"/>
+</menu>
