@@ -1,0 +1,76 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="20dp">
+	<TextView
+		android:id="@+id/textview18"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:text="اسم الحقل:"
+		android:textSize="12sp"
+		android:textStyle="bold" />
+	<EditText
+		android:id="@+id/field_name_edittext"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20dp"
+		android:textSize="12sp"
+		android:hint="Enter field name"
+		android:background="@drawable/edittext_border"	android:inputType="textCapWords" />
+	<TextView
+		android:id="@+id/textview19"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:text="Field Type:"
+		android:textSize="12sp"
+		android:textStyle="bold" />
+	<Spinner
+		android:id="@+id/field_type_spinner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="20dp"
+		android:spinnerMode="dropdown"
+		android:minHeight="48dp" />
+	<TextView
+		android:id="@+id/textview20"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:text="Options:"
+		android:textSize="12sp"
+		android:textStyle="bold" />
+	<LinearLayout
+		android:id="@+id/options_container"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:orientation="vertical"
+		android:layout_weight="1" />
+	<LinearLayout
+		android:id="@+id/linear10"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="end">
+		<Button
+			android:id="@+id/cancel_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="الغاء"
+			android:textSize="12sp"
+			android:textColor="#757575"
+			style="?android:attr/borderlessButtonStyle" />
+		<Button
+			android:id="@+id/save_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="حفظ"
+			android:textSize="12sp"
+			android:layout_marginStart="8dp" />
+	</LinearLayout>
+</LinearLayout>
