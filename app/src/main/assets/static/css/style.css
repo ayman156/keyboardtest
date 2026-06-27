@@ -1,0 +1,516 @@
+/* style.css - ملف التحكم المركزي للمشروع (نسخة محسنة) */
+
+:root {
+    /* --- 1. الألوان الأساسية (Primary Colors) --- */
+    --primary-color: #dc3545;          /* لون الهوية، الأزرار، والروابط */
+    --primary-hover: #b02a37;          /* لون الأزرار عند مرور الماوس */
+    --primary-light: rgba(220, 53, 69, 0.1); /* خلفيات شفافة للعناصر الأساسية */
+    
+    /* --- 2. الألوان الثانوية والمساعدة (Secondary & Accent) --- */
+    --secondary-color: #6c757d;        /* الألوان الفرعية */
+    --secondary-hover: #5c636a;
+    --accent-color: #fd7e14;            /* لون مميز للعناصر الخاصة */
+    
+    /* --- 3. ألوان الحالة (Status Colors) --- */
+    --success-color: #198754;           /* رسائل النجاح، أيقونات الحفظ */
+    --success-hover: #157347;
+    --danger-color: #dc3545;            /* أزرار الحذف، رسائل الخطأ */
+    --danger-hover: #b02a37;
+    --warning-color: #ffc107;            /* أزرار التعديل، التنبيهات */
+    --warning-hover: #ffca2c;
+    --info-color: #0dcaf0;               /* أزرار العرض، التفاصيل */
+    --info-hover: #31d2f2;
+
+    /* --- 4. الخلفيات والأسطح (Backgrounds) --- */
+    --body-bg: #f4f7f6;                  /* خلفية الصفحة كاملة */
+    --body-bg-dark: #e9ecef;              /* خلفية داكنة للتباين */
+    --card-bg: #ffffff;                   /* خلفية البطاقات والجداول */
+    --card-bg-alt: #f8f9fa;                /* خلفية بديلة للبطاقات */
+    --input-bg: #ffffff;                   /* خلفية حقول الإدخال */
+    --input-bg-disabled: #e9ecef;           /* خلفية الحقول المعطلة */
+    --header-bg: #ffffff;                   /* خلفية رأس الصفحة */
+    --sidebar-bg: #ffffff;                  /* خلفية القائمة الجانبية */
+    --footer-bg: #2d3436;                    /* خلفية تذييل الصفحة */
+
+    /* --- 5. الخطوط والنصوص (Typography) --- */
+    --main-font: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --heading-font: 'Tajawal', 'Segoe UI', sans-serif; /* خط مميز للعناوين */
+    --text-main: #2d3436;                    /* لون النص الأساسي */
+    --text-muted: #636e72;                     /* لون النصوص الجانبية والمساعدة */
+    --text-light: #ffffff;                      /* لون النص على الخلفيات الداكنة */
+    --text-heading: #1e272e;                     /* لون العناوين */
+    --text-link: var(--primary-color);            /* لون الروابط */
+    --text-link-hover: var(--primary-hover);       /* لون الروابط عند التفاعل */
+    
+    /* --- 6. أحجام الخطوط (Font Sizes) --- */
+    --font-size-base: 16px;          /* الحجم الأساسي للخط */
+    --font-size-small: 0.875rem;     /* الخط الصغير */
+    --font-size-large: 1.25rem;       /* الخط الكبير */
+    --font-size-h1: 2.5rem;            /* حجم العنوان الرئيسي */
+    --font-size-h2: 2rem;                /* حجم العنوان الثاني */
+    --font-size-h3: 1.75rem;              /* حجم العنوان الثالث */
+
+    /* --- 7. المسافات والهوامش (Spacing) --- */
+    --spacing-xs: 0.25rem;     /* مسافة صغيرة جداً */
+    --spacing-sm: 0.5rem;       /* مسافة صغيرة */
+    --spacing-md: 1rem;          /* مسافة متوسطة */
+    --spacing-lg: 1.5rem;         /* مسافة كبيرة */
+    --spacing-xl: 2rem;            /* مسافة كبيرة جداً */
+    
+    /* --- 8. الحواف والظلال (Borders & Shadows) --- */
+    --border-radius-sm: 5px;      /* استدارة زوايا صغيرة */
+    --border-radius: 10px;         /* استدارة زوايا الأزرار والبطاقات */
+    --border-radius-lg: 15px;       /* استدارة زوايا كبيرة */
+    --border-radius-circle: 50%;      /* دائرة كاملة */
+    
+    --border-width: 1px;               /* سمك الحدود */
+    --border-color: #dee2e6;            /* لون الحدود */
+    --border-color-light: #e9ecef;       /* لون الحدود الفاتح */
+    
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);          /* ظلال البطاقات */
+    --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);       /* ظلال البطاقات عند التفاعل */
+    --dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);         /* ظلال القوائم المنسدلة */
+    --modal-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);            /* ظلال النوافذ المنبثقة */
+    
+    --input-focus-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); /* ظلال حقول الإدخال عند التركيز */
+
+    /* --- 9. أبعاد العناصر (Element Sizes) --- */
+    --header-height: 70px;           /* ارتفاع رأس الصفحة */
+    --sidebar-width: 250px;           /* عرض القائمة الجانبية */
+    --sidebar-collapsed-width: 70px;    /* عرض القائمة الجانبية مصغرة */
+    --footer-height: 60px;               /* ارتفاع تذييل الصفحة */
+    
+    /* --- 10. سرعات الحركة (Animation Speeds) --- */
+    --transition-fast: 0.2s;          /* سرعة سريعة للحركات */
+    --transition-normal: 0.3s;         /* سرعة عادية للحركات */
+    --transition-slow: 0.5s;            /* سرعة بطيئة للحركات */
+    
+    /* --- 11. ألوان خاصة بالطباعة والتنبيهات (Print & Notifications) --- */
+    --print-bg: #ffffff;                 /* خلفية وضع الطباعة */
+    --print-text: #000000;                /* لون النص في وضع الطباعة */
+    --toast-success-bg: #d1e7dd;          /* خلفية تنبيه النجاح */
+    --toast-success-text: #0f5132;          /* نص تنبيه النجاح */
+    --toast-error-bg: #f8d7da;               /* خلفية تنبيه الخطأ */
+    --toast-error-text: #842029;              /* نص تنبيه الخطأ */
+    --toast-warning-bg: #fff3cd;               /* خلفية تنبيه التحذير */
+    --toast-warning-text: #664d03;              /* نص تنبيه التحذير */
+    
+    /* --- 12. متغيرات لوضع الظلام (Dark Mode Ready) --- */
+    --dark-body-bg: #1a1e21;
+    --dark-card-bg: #2d3436;
+    --dark-text-main: #f8f9fa;
+    --dark-text-muted: #adb5bd;
+    --dark-border-color: #495057;
+}
+
+/* --- تطبيق المتغيرات بشكل عام على المشروع --- */
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-main);
+    font-family: var(--main-font);
+    font-size: var(--font-size-base);
+    direction: rtl; /* يدعم العربية افتراضياً */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* تنسيق العناوين */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text-heading);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+/* تنسيق البطاقات (Cards) */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border-color-light);
+    box-shadow: var(--card-shadow);
+    margin-bottom: var(--spacing-lg);
+    transition: box-shadow var(--transition-normal) ease, transform var(--transition-normal) ease;
+}
+
+.card:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card-header {
+    background-color: var(--card-bg-alt);
+    border-bottom: var(--border-width) solid var(--border-color-light);
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 600;
+}
+
+.card-body {
+    padding: var(--spacing-lg);
+}
+
+.card-footer {
+    background-color: var(--card-bg-alt);
+    border-top: var(--border-width) solid var(--border-color-light);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* تنسيق الأزرار (Buttons) */
+.btn {
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1.5rem;
+    transition: all var(--transition-normal) ease;
+    font-weight: 500;
+    gap: var(--spacing-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-sm {
+    padding: 0.25rem 1rem;
+    font-size: var(--font-size-small);
+    border-radius: var(--border-radius-sm);
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-large);
+    border-radius: var(--border-radius-lg);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: var(--text-light);
+}
+
+.btn-success:hover {
+    background-color: var(--success-hover);
+    border-color: var(--success-hover);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: var(--text-light);
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--text-heading);
+}
+
+.btn-warning:hover {
+    background-color: var(--warning-hover);
+    border-color: var(--warning-hover);
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+    color: var(--text-heading);
+}
+
+.btn-info:hover {
+    background-color: var(--info-hover);
+    border-color: var(--info-hover);
+}
+
+/* تنسيق الروابط */
+a {
+    color: var(--text-link);
+    text-decoration: none;
+    transition: color var(--transition-fast) ease;
+}
+
+a:hover {
+    color: var(--text-link-hover);
+}
+
+/* تنسيق جداول البيانات */
+.table {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+.table thead {
+    background-color: var(--card-bg-alt);
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.table th {
+    padding: var(--spacing-md);
+    border-bottom: calc(var(--border-width) * 2) solid var(--border-color);
+}
+
+.table td {
+    padding: var(--spacing-md);
+    border-bottom: var(--border-width) solid var(--border-color-light);
+    vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--primary-light);
+    transition: background-color var(--transition-fast) ease;
+}
+
+/* تنسيق حقول الإدخال (Inputs) */
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border-color);
+    padding: 0.6rem 1rem;
+    background-color: var(--input-bg);
+    transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: var(--input-focus-shadow);
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-control:disabled, .form-select:disabled {
+    background-color: var(--input-bg-disabled);
+    cursor: not-allowed;
+}
+
+.form-label {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.form-text {
+    font-size: var(--font-size-small);
+    color: var(--text-muted);
+    margin-top: var(--spacing-xs);
+}
+
+/* تنسيق المجموعات */
+.input-group-text {
+    background-color: var(--card-bg-alt);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-muted);
+}
+
+/* تنسيق القوائم المنسدلة */
+.dropdown-menu {
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid var(--border-color-light);
+    box-shadow: var(--dropdown-shadow);
+    padding: var(--spacing-sm) 0;
+}
+
+.dropdown-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: background-color var(--transition-fast) ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-light);
+}
+
+/* تنسيق التنبيهات */
+.alert {
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border: var(--border-width) solid transparent;
+}
+
+.alert-success {
+    background-color: var(--toast-success-bg);
+    color: var(--toast-success-text);
+    border-color: #badbcc;
+}
+
+.alert-danger {
+    background-color: var(--toast-error-bg);
+    color: var(--toast-error-text);
+    border-color: #f5c2c7;
+}
+
+.alert-warning {
+    background-color: var(--toast-warning-bg);
+    color: var(--toast-warning-text);
+    border-color: #ffecb5;
+}
+
+/* تنسيق الشارات */
+.badge {
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+}
+
+.badge.bg-success { background-color: var(--success-color) !important; }
+.badge.bg-danger { background-color: var(--danger-color) !important; }
+.badge.bg-warning { background-color: var(--warning-color) !important; color: var(--text-heading); }
+.badge.bg-info { background-color: var(--info-color) !important; }
+
+/* تنسيق الـ Pagination */
+.pagination {
+    gap: var(--spacing-xs);
+}
+
+.page-link {
+    border-radius: var(--border-radius-sm);
+    color: var(--text-main);
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: all var(--transition-fast) ease;
+}
+
+.page-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* تنسيق الـ Modals */
+.modal-content {
+    border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: var(--modal-shadow);
+}
+
+.modal-header {
+    padding: var(--spacing-lg);
+    border-bottom: var(--border-width) solid var(--border-color-light);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+.modal-footer {
+    padding: var(--spacing-lg);
+    border-top: var(--border-width) solid var(--border-color-light);
+}
+
+/* تنسيق خاص لعناصر النظام */
+.required-field::after {
+    content: "*";
+    color: var(--danger-color);
+    margin-right: var(--spacing-xs);
+}
+
+/* تنسيق الطباعة */
+@media print {
+    body {
+        background-color: var(--print-bg);
+        color: var(--print-text);
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: var(--border-width) solid var(--border-color);
+    }
+}
+
+/* تنسيقات متجاوبة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-h1: 2rem;
+        --font-size-h2: 1.75rem;
+        --font-size-h3: 1.5rem;
+        --sidebar-width: 100%;
+    }
+    
+    .card-body {
+        padding: var(--spacing-md);
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* تخصيص Select2 ليتناسب مع التصميم */
+.select2-container--bootstrap-5 .select2-selection {
+    border-radius: var(--border-radius) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    min-height: 40px;
+}
+
+.select2-container--bootstrap-5.select2-container--focus .select2-selection {
+    border-color: var(--primary-color) !important;
+    box-shadow: var(--input-focus-shadow) !important;
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-hover);
+}
+
+/* الألوان النصية الموحدة */
+.text-primary { color: var(--primary-color) !important; }
+.text-success { color: var(--success-color) !important; }
+.text-danger  { color: var(--danger-color) !important; }
+.text-warning { color: var(--warning-color) !important; }
+.text-info    { color: var(--info-color) !important; }
+.text-muted   { color: var(--text-muted) !important; }
+
+/* ألوان الخلفية */
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-success { background-color: var(--success-color) !important; }
+.bg-danger  { background-color: var(--danger-color) !important; }
+.bg-warning { background-color: var(--warning-color) !important; }
+.bg-info    { background-color: var(--info-color) !important; }
