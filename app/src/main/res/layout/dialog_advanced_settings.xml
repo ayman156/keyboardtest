@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الإعدادات المتقدمة للمشروع"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="قاعدة البيانات المفضلّة:"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/db_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+        
+        
+        <LinearLayout
+    android:id="@+id/db_credentials_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:layout_marginTop="10dp"
+    android:padding="5dp"
+    android:background="#F5F5F5">
+
+    <EditText
+        android:id="@+id/db_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="اسم قاعدة البيانات (DB Name)"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/db_user_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="اسم المستخدم (User)"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/db_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="كلمة المرور (Password)"
+        android:inputType="textPassword"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/db_host_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="المستضيف (Host) مثل localhost"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/db_port_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="المنفذ (Port) مثل 5432"
+        android:inputType="number"
+        android:textSize="14sp" />
+</LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="إصدار Django:"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/version_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="مثال: 4.2"
+        android:inputType="numberDecimal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <CheckBox
+        android:id="@+id/whitenoise_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="إستخدام WhiteNoise للملفات الثابتة" />
+
+    <CheckBox
+        android:id="@+id/drf_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Django Rest Framework (DRF)" />
+
+    <CheckBox
+        android:id="@+id/excel_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="دعم استيراد/تصدير Excel" />
+    <CheckBox
+        android:id="@+id/crispy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="استخدام كرسبي فورم للقوالب" />      
+
+    <Button
+        android:id="@+id/apply_advanced_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="حفظ الإعدادات"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
