@@ -1,0 +1,49 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<EditText
+		android:id="@+id/edittext1"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:padding="8dp"
+		android:textSize="12sp"
+		android:hint="امر sql مباشر" />
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dp"
+		android:orientation="horizontal">
+		<Button
+			android:id="@+id/button1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="تنفيذ"
+			android:textSize="12sp" />
+	</LinearLayout>
+	<ScrollView
+		android:id="@+id/vscroll1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp">
+		<LinearLayout
+			android:id="@+id/linear2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:orientation="vertical">
+			<EditText
+				android:id="@+id/edittext2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:textSize="12sp"
+				android:hint="Edit Text" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
