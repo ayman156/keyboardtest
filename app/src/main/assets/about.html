@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "من نحن" %} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold text-primary mb-4">{% trans "نبذة عن النظام" %}</h1>
+            <p class="lead text-muted">
+                {% trans "نحن نقدم حلاً متكاملاً لإدارة البيانات والعمليات البرمجية بكفاءة عالية. تم تصميم هذا النظام ليلبي احتياجات الشركات في تنظيم سجلاتها وإدارة النماذج المعقدة (Formsets) بكل سهولة ويسر." %}
+            </p>
+            <div class="d-flex gap-3 mt-4">
+                <a href="{% url 'index' %}" class="btn btn-primary btn-lg px-4">{% trans "ابدأ الآن" %}</a>
+                <a href="#features" class="btn btn-outline-secondary btn-lg px-4">{% trans "المميزات" %}</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center">
+            <img src="https://img.freepik.com/free-vector/about-us-concept-illustration_114360-639.jpg" alt="About Us" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div id="features" class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col text-center">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 text-primary">
+                <i class="fas fa-bolt p-3 bg-light rounded-circle shadow-sm"></i>
+            </div>
+            <h3 class="fs-4 fw-bold">{% trans "السرعة والكفاءة" %}</h3>
+            <p>{% trans "نظامنا مبني على أحدث التقنيات لضمان معالجة البيانات وإضافة النماذج التابعة بشكل لحظي دون تأخير." %}</p>
+        </div>
+        <div class="feature col text-center">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 text-success">
+                <i class="fas fa-shield-alt p-3 bg-light rounded-circle shadow-sm"></i>
+            </div>
+            <h3 class="fs-4 fw-bold">{% trans "الأمان والموثوقية" %}</h3>
+            <p>{% trans "نلتزم بأعلى معايير الحماية لضمان سلامة بياناتك وخصوصيتها في جميع مراحل المعالجة." %}</p>
+        </div>
+        <div class="feature col text-center">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3 text-info">
+                <i class="fas fa-mobile-alt p-3 bg-light rounded-circle shadow-sm"></i>
+            </div>
+            <h3 class="fs-4 fw-bold">{% trans "تصميم متجاوب" %}</h3>
+            <p>{% trans "واجهة النظام تعمل بكفاءة عالية على جميع الأجهزة، سواء كنت تستخدم الحاسوب أو الهاتف المحمول." %}</p>
+        </div>
+    </div>
+
+    <div class="bg-primary text-white rounded-4 p-5 shadow-lg my-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h2 class="fw-bold display-5">100%</h2>
+                <p class="mb-0">{% trans "رضا العملاء" %}</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold display-5">24/7</h2>
+                <p class="mb-0">{% trans "دعم فني" %}</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold display-5">10k+</h2>
+                <p class="mb-0">{% trans "عمليات ناجحة" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .rounded-4 { border-radius: 1.5rem !important; }
+    img { max-height: 400px; }
+    /* إضافة تأثير بسيط عند التمرير على المميزات */
+    .feature:hover i {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+</style>
+{% endblock %}
