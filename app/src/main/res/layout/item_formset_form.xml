@@ -1,0 +1,98 @@
+<!-- res/layout/item_formset_form.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#f5f5f5"
+    android:layout_marginBottom="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Child Model:"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/child_model_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relationship Name:"/>
+
+    <EditText
+        android:id="@+id/relationship_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g., subjects_set"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extra Fields:"/>
+
+            <EditText
+                android:id="@+id/extra_fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prefix:"/>
+
+            <EditText
+                android:id="@+id/prefix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., formset"
+                android:text="formset"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/can_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Allow deleting items"
+        android:checked="true"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/remove_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove This Formset"
+        android:background="#F44336"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
