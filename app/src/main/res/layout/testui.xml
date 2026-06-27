@@ -1,0 +1,267 @@
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fillViewport="true">
+	<LinearLayout
+		android:id="@+id/linear5"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/textview9"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="24dp"
+			android:text="مخصص إعدادات Jazzmin المتقدم"
+			android:textSize="24sp"
+			android:textStyle="bold"
+			android:textColor="#2C3E50"
+			android:layout_gravity="center_horizontal|center_vertical"
+			android:drawablePadding="8dp" />
+		<TextView
+			android:id="@+id/textview10"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:text="المظهر العام"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#417690"
+			android:drawablePadding="8dp" />
+		<EditText
+			android:id="@+id/editSiteTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:padding="12dp"
+			android:background="@drawable/edittext_background"
+			android:textSize="12sp"
+			android:hint="عنوان الموقع (Site Title)" />
+		<Spinner
+			android:id="@+id/spinnerTheme"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:padding="12dp"
+			android:background="@drawable/edittext_background"
+			android:spinnerMode="dropdown" />
+		<TextView
+			android:id="@+id/textview11"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_marginBottom="12dp"
+			android:text="إعدادات القوائم"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#417690"
+			android:drawablePadding="8dp" />
+		<CheckBox
+			android:id="@+id/checkHideSidebar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="إخفاء القائمة الجانبية"
+			android:textSize="16sp" />
+		<CheckBox
+			android:id="@+id/checkTopMenu"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="تفعيل القائمة العلوية"
+			android:textSize="16sp" />
+		<CheckBox
+			android:id="@+id/checkCompactSidebar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="تصغير القائمة الجانبية"
+			android:textSize="16sp" />
+		<CheckBox
+			android:id="@+id/checkShowIcons"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="إظهار الأيقونات في القائمة"
+			android:textSize="16sp" />
+		<TextView
+			android:id="@+id/textview12"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_marginBottom="12dp"
+			android:text="إعدادات الشعار"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#417690"
+			android:drawablePadding="8dp" />
+		<EditText
+			android:id="@+id/editLogoText"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:padding="12dp"
+			android:background="@drawable/edittext_background"
+			android:textSize="12sp"
+			android:hint="نص الشعار" />
+		<EditText
+			android:id="@+id/editLogoImage"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:padding="12dp"
+			android:background="@drawable/edittext_background"
+			android:textSize="12sp"
+			android:hint="رابط صورة الشعار (اختياري)"
+			android:inputType="textUri" />
+		<TextView
+			android:id="@+id/textview13"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_marginBottom="12dp"
+			android:text="الألوان"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#417690"
+			android:drawablePadding="8dp" />
+		<LinearLayout
+			android:id="@+id/linear6"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:orientation="horizontal">
+			<TextView
+				android:id="@+id/textview14"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="لون القائمة الجانبية:"
+				android:textSize="14sp"
+				android:layout_weight="1"
+				android:gravity="start" />
+			<Button
+				android:id="@+id/btnPickSidebarColor"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:textSize="12sp"
+				android:layout_gravity="center_vertical"
+				android:backgroundTint="#343A40" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linear7"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<TextView
+				android:id="@+id/textview15"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="لون الخلفية:"
+				android:textSize="14sp"
+				android:layout_weight="1"
+				android:gravity="start" />
+			<Button
+				android:id="@+id/btnPickBgColor"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:textSize="12sp"
+				android:layout_gravity="center_vertical"
+				android:backgroundTint="#FFFFFF" />
+		</LinearLayout>
+		<TextView
+			android:id="@+id/textview16"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_marginBottom="12dp"
+			android:text="إعدادات متقدمة"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="#417690"
+			android:drawablePadding="8dp" />
+		<CheckBox
+			android:id="@+id/checkShowUiTweaks"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="تفعيل تحسينات واجهة المستخدم"
+			android:textSize="16sp" />
+		<CheckBox
+			android:id="@+id/checkCustomCss"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="إضافة CSS مخصص"
+			android:textSize="16sp" />
+		<EditText
+			android:id="@+id/editCustomCss"
+			android:layout_width="match_parent"
+			android:layout_height="100dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="12dp"
+			android:padding="12dp"
+			android:background="@drawable/edittext_background"
+			android:gravity="right"
+			android:textSize="12sp"
+			android:hint="أضف CSS مخصص هنا..."
+			android:inputType="textMultiLine"
+			android:visibility="gone" />
+		<LinearLayout
+			android:id="@+id/linear8"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:layout_marginBottom="24dp"
+			android:orientation="horizontal">
+			<Button
+				android:id="@+id/btnReset"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="12dp"
+				android:text="إعادة تعيين"
+				android:textSize="12sp"
+				android:textColor="#FFFFFF"
+				android:layout_weight="1"
+				android:backgroundTint="#6C757D"
+				android:layout_marginEnd="8dp" />
+			<Button
+				android:id="@+id/btnGenerate"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="12dp"
+				android:text="توليد الكود ونسخه"
+				android:textSize="12sp"
+				android:textColor="#FFFFFF"
+				android:layout_weight="2"
+				android:backgroundTint="#417690"
+				android:layout_marginStart="8dp" />
+		</LinearLayout>
+		<TextView
+			android:id="@+id/txtResult"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="24dp"
+			android:padding="16dp"
+			android:background="#F8F9FA"
+			android:gravity="right"
+			android:textSize="12sp"
+			android:typeface="monospace"
+			android:lineSpacingExtra="4dp" />
+		<Button
+			android:id="@+id/btnCopy"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="12dp"
+			android:text="نسخ الكود"
+			android:textSize="12sp"
+			android:textColor="#FFFFFF"
+			android:visibility="gone"
+			android:backgroundTint="#28A745" />
+	</LinearLayout>
+</ScrollView>
