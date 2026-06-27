@@ -1,0 +1,110 @@
+<script>
+    class FormsetManager {
+        constructor(prefix, options = {}) {
+            this.prefix = prefix;
+            this.container = document.getElementById(`id_${prefix}-forms`);
+            this.totalForms = document.getElementById(`id_${prefix}-TOTAL_FORMS`);
+            this.emptyFormTemplate = document.getElementById(`${prefix}-empty-form`);
+            this.options = {
+                animationDuration: 200,
+                confirmDelete: true,
+                ...options
+            };
+            if (this.container && this.totalForms && this.emptyFormTemplate) {
+                this.bindEvents();
+            }
+        }
+
+        // إضافة سطر جديد للجدول
+        addRow() {
+            const formIndex = parseInt(this.totalForms.value);
+            const rowHtml = this.emptyFormTemplate.innerHTML.replace(/__prefix__/g, formIndex);
+
+            // إنشاء عنصر TR مؤقت
+            const tempTable = document.createElement('table');
+            tempTable.innerHTML = `<tbody>${rowHtml}</tbody>`;
+            const newRow = tempTable.querySelector('tr');
+            
+            // إضافة تأثير بصري
+            newRow.style.opacity = '0';
+            newRow.style.transition = `opacity ${this.options.animationDuration}ms ease-in`;
+            
+            this.container.appendChild(newRow);
+            
+            // تفعيل الظهور
+            setTimeout(() => { newRow.style.opacity = '1'; }, 10);
+            
+            // تحديث عداد Django
+            this.totalForms.value = formIndex + 1;
+        }
+
+        // حذف سطر من الجدول
+        removeRow(rowElement) {
+            const deleteInput = rowElement.querySelector('input[name$="-DELETE"]');
+
+            if (deleteInput) {
+              
+                deleteInput.checked = true;
+                rowElement.style.display = 'none';
+                rowElement.classList.add('deleted-row');
+            } else {
+                // حالة السجل الجديد (لم يحفظ بعد)
+                rowElement.style.opacity = '0';
+                setTimeout(() => {
+                    rowElement.remove();
+                    // لا ننقص TOTAL_FORMS لضمان عدم تداخل الفهارس (Indexes)
+                }, this.options.animationDuration);
+            }
+        }
+
+        bindEvents() {
+            // مراقبة زر "إضافة سطر"
+            const addBtn = document.querySelector(`.add-formset-row[data-formset-prefix="${this.prefix}"]`);
+            if (addBtn) {
+                addBtn.onclick = (e) => {
+                    e.preventDefault();
+                    this.addRow();
+                };
+            }
+
+            // مراقبة أزرار الحذف داخل الجدول (Event Delegation)
+            this.container.addEventListener('click', (e) => {
+                const removeBtn = e.target.closest('.remove-formset-row');
+                if (removeBtn) {
+                    e.preventDefault();
+                    const row = removeBtn.closest('.formset-row');
+                    this.removeRow(row);
+                }
+            });
+        }
+    }
+
+    // تشغيل المدير لجميع الـ Formsets عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        window.formsetManagers = {};
+        document.querySelectorAll('[id$="-forms"]').forEach(container => {
+            const prefix = container.id.replace('id_', '').replace('-forms', '');
+            window.formsetManagers[prefix] = new FormsetManager(prefix);
+        });
+    });
+</script>
+
+<style>
+    /* تحسينات بصرية للجداول التابعة */
+    .formset-row {
+        transition: all 0.3s ease;
+    }
+    .deleted-row {
+        background-color: #fff5f5 !important;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    /* تصغير حجم حقول الجداول لتناسب العرض الأفقي */
+    .table td .form-control, .table td .form-select {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    .table td .mb-3 {
+        margin-bottom: 0 !important;
+    }
+</style>
