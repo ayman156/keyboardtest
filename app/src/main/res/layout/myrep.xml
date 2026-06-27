@@ -1,0 +1,464 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/_app_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/_toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:popupTheme="@style/AppTheme.PopupOverlay" />
+	</com.google.android.material.appbar.AppBarLayout>
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="16dp"
+		android:background="#F5F5F5"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+		<LinearLayout
+			android:id="@+id/main_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:orientation="vertical"
+			tools:context=".ReportDesignerActivity">
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview11"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear25"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview27"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						android:text="معلومات التقرير"
+						android:textSize="18sp"
+						android:textStyle="bold"
+						android:textColor="#2196F3" />
+					<EditText
+						android:id="@+id/et_report_name"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="12dp"
+						android:background="@drawable/edittext_border"
+						android:textSize="12sp"
+						android:hint="اسم التقرير *"
+						android:inputType="textCapWords" />
+					<EditText
+						android:id="@+id/et_report_description"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:padding="12dp"
+						android:background="@drawable/edittext_border"
+						android:textSize="12sp"
+						android:hint="وصف التقرير"
+						android:lines="2"
+						android:inputType="textMultiLine" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview12"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear26"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview28"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text="اختر النموذج"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#4CAF50" />
+					<Spinner
+						android:id="@+id/model_spinner"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="12dp"
+						android:background="@drawable/spinner_border"
+						android:spinnerMode="dropdown" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview13"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear27"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview29"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text="الحقول المحددة"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#FF9800" />
+					<androidx.recyclerview.widget.RecyclerView
+						android:id="@+id/rv_selected_fields"
+						android:layout_width="match_parent"
+						android:layout_height="200dp"
+						android:layout_marginTop="8dp" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview14"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear28"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview30"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text="العلاقات المرتبطة (select_related / prefetch_related)"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#9C27B0" />
+					<LinearLayout
+						android:id="@+id/related_container"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:background="#F8F9FA"
+						android:orientation="vertical"
+						android:minHeight="60dp" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview15"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear29"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<LinearLayout
+						android:id="@+id/linear30"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center_vertical"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/textview31"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="دوال التجميع (Annotate)"
+							android:textSize="16sp"
+							android:textStyle="bold"
+							android:textColor="#E91E63"
+							android:layout_weight="1" />
+						<Button
+							android:id="@+id/btn_add_annotate"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="إضافة"
+							android:textSize="12sp"
+							android:textColor="#FFFFFF"
+							android:backgroundTint="#E91E63"
+							android:paddingHorizontal="16dp" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/annotate_container"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:padding="8dp"
+						android:background="#F8F9FA"
+						android:orientation="vertical"
+						android:minHeight="60dp" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview16"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear31"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<LinearLayout
+						android:id="@+id/linear32"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center_vertical"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/textview32"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="الفلاتر (Filter)"
+							android:textSize="16sp"
+							android:textStyle="bold"
+							android:textColor="#F44336"
+							android:layout_weight="1" />
+						<Button
+							android:id="@+id/btn_add_filter"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="إضافة"
+							android:textSize="12sp"
+							android:textColor="#FFFFFF"
+							android:backgroundTint="#F44336"
+							android:paddingHorizontal="16dp" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/filter_container"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:padding="8dp"
+						android:background="#F8F9FA"
+						android:orientation="vertical"
+						android:minHeight="60dp" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview17"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear33"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview33"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						android:text="خيارات إضافية"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#607D8B" />
+					<LinearLayout
+						android:id="@+id/linear34"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:orientation="horizontal">
+						<CheckBox
+							android:id="@+id/cb_group_by"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="Group By"
+							android:textSize="14sp"
+							android:layout_weight="1" />
+						<CheckBox
+							android:id="@+id/cb_order_by"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="Order By"
+							android:textSize="14sp"
+							android:layout_weight="1" />
+						<CheckBox
+							android:id="@+id/cb_distinct"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="Distinct"
+							android:textSize="14sp"
+							android:layout_weight="1" />
+					</LinearLayout>
+					<LinearLayout
+						android:id="@+id/linear35"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:gravity="center_vertical"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/textview34"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="الحد:"
+							android:textSize="14sp"
+							android:textStyle="bold" />
+						<EditText
+							android:id="@+id/et_limit"
+							android:layout_width="80dp"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:background="@drawable/edittext_border"
+							android:textSize="12sp"
+							android:inputType="number"
+							android:layout_marginStart="8dp" />
+						<TextView
+							android:id="@+id/textview35"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="الإزاحة:"
+							android:textSize="14sp"
+							android:textStyle="bold"
+							android:layout_marginStart="16dp" />
+						<EditText
+							android:id="@+id/et_offset"
+							android:layout_width="80dp"
+							android:layout_height="wrap_content"
+							android:padding="8dp"
+							android:background="@drawable/edittext_border"
+							android:textSize="12sp"
+							android:inputType="number"
+							android:layout_marginStart="8dp" />
+					</LinearLayout>
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardview18"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				app:cardBackgroundColor="#FFFFFF"
+				app:cardCornerRadius="8dp"
+				app:cardElevation="2dp">
+				<LinearLayout
+					android:id="@+id/linear36"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+					<TextView
+						android:id="@+id/textview36"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						android:text="خيارات التصدير"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						android:textColor="#795548" />
+					<LinearLayout
+						android:id="@+id/linear37"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:orientation="horizontal">
+						<Button
+							android:id="@+id/btnExportExcel"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="كود Excel"
+							android:textSize="12sp"
+							android:textColor="#FFFFFF"
+							android:layout_weight="1"
+							android:backgroundTint="#4CAF50"
+							android:drawableStart="@drawable/ic_excel"
+							android:drawablePadding="8dp"
+							android:layout_marginEnd="4dp" />
+						<Button
+							android:id="@+id/btnExportPDF"
+							android:layout_width="0dp"
+							android:layout_height="wrap_content"
+							android:text="كود PDF"
+							android:textSize="12sp"
+							android:textColor="#FFFFFF"
+							android:layout_weight="1"
+							android:backgroundTint="#F44336"
+							android:drawableStart="@drawable/ic_pdf"
+							android:drawablePadding="8dp"
+							android:layout_marginStart="4dp" />
+					</LinearLayout>
+					<Button
+						android:id="@+id/btnPreviewTemplate"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text="معاينة القالب"
+						android:textSize="12sp"
+						android:textColor="#FFFFFF"
+						android:backgroundTint="#9C27B0"
+						android:drawableStart="@drawable/ic_template"
+						android:drawablePadding="8dp" />
+				</LinearLayout>
+			</androidx.cardview.widget.CardView>
+			<LinearLayout
+				android:id="@+id/linear38"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:orientation="vertical">
+				<Button
+					android:id="@+id/btnGenerateFullCode"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="8dp"
+					android:padding="16dp"
+					android:text="إنشاء كود كامل"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF"
+					android:backgroundTint="#2196F3" />
+				<Button
+					android:id="@+id/btn_save_report"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:text="حفظ التقرير وإنشاء الاستعلام"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					android:textColor="#FFFFFF"
+					android:backgroundTint="#FF9800" />
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
