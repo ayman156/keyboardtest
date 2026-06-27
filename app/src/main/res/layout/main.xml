@@ -1,25 +1,84 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/_coordinator"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<com.google.android.material.appbar.AppBarLayout
-		android:id="@+id/_app_bar"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="16dp"
+	android:background="#f5f5f5">
+	<LinearLayout
+		android:id="@+id/linear3"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:theme="@style/AppTheme.AppBarOverlay">
-		<com.google.android.material.appbar.MaterialToolbar
-			android:id="@+id/_toolbar"
+		android:padding="8dp"
+		android:orientation="horizontal">
+		<Button
+			android:id="@+id/b_mor"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:background="#2196F3"
+			android:text="..."
+			android:textSize="12sp"
+			android:textColor="#FFFFFF" />
+		<TextView
+			android:id="@+id/textview2"
 			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize"
-			android:background="?attr/colorPrimary"
-			app:popupTheme="@style/AppTheme.PopupOverlay" />
-	</com.google.android.material.appbar.AppBarLayout>
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="16dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="مشاريعي Django - بواسطة أيمن ظافر"
+			android:textSize="16sp"
+			android:textStyle="bold"
+			android:textColor="#2196F3" />
+	</LinearLayout>
 	<LinearLayout
+		android:id="@+id/linear2"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:orientation="horizontal">
+		<Button
+			android:id="@+id/add_project_button"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="+ إضافة مشروع"
+			android:textSize="12sp"
+			android:textColor="#FFFFFF"
+			android:layout_weight="1"
+			android:backgroundTint="#4CAF50"
+			android:layout_marginEnd="8dp" />
+		<Button
+			android:id="@+id/but_impo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="إستيراد مشروع"
+			android:textSize="12sp"
+			android:textColor="#FFFFFF"
+			android:backgroundTint="#4CAF50"
+			android:layout_marginStart="8dp" />
+		<Button
+			android:id="@+id/generate_all_button"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="قناة تليجرام"
+			android:textSize="12sp"
+			android:textColor="#FFFFFF"
+			android:layout_weight="1"
+			android:backgroundTint="#FF9800"
+			android:layout_marginStart="8dp" />
+	</LinearLayout>
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipe_refresh_layout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		<ListView
+			android:id="@+id/projects_list_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF"
+			android:choiceMode="none"
+			android:divider="#e0e0e0" />
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>
