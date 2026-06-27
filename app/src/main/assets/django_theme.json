@@ -1,0 +1,36 @@
+{
+  "name": "Monokai",
+  "colors": {
+    "editor.background": "#1E1E1E",
+    "editor.foreground": "#F8F8F2",
+    "editor.lineHighlightBackground": "#3E3E3E40",
+    "editor.selectionBackground": "#575b6180"
+  },
+  "tokenColors": [
+    {
+      "name": "Comment",
+      "scope": "comment",
+      "settings": { "foreground": "#75715E", "fontStyle": "italic" }
+    },
+    {
+      "name": "String",
+      "scope": "string",
+      "settings": { "foreground": "#E6DB74" }
+    },
+    {
+      "name": "Keyword",
+      "scope": "keyword, storage.type, storage.modifier",
+      "settings": { "foreground": "#F92672", "fontStyle": "bold" }
+    },
+    {
+      "name": "Django Tag",
+      "scope": "entity.name.tag.django, punctuation.definition.tag.django",
+      "settings": { "foreground": "#66D9EF", "fontStyle": "bold" }
+    },
+    {
+      "name": "Django Variable",
+      "scope": "variable.other.django",
+      "settings": { "foreground": "#FD971F" }
+    }
+  ]
+}
